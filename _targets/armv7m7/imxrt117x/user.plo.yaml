@@ -8,5 +8,12 @@ contents:
   - app {{ env.BOOT_DEVICE }} -x dummyfs xip1 ocram2
   - app {{ env.BOOT_DEVICE }} -x imxrt-multi xip1 ocram2;aips14;aips5
   - app {{ env.BOOT_DEVICE }} -x psh xip1 ocram2
+  - app {{ env.BOOT_DEVICE }} -xn usb ocram2 itcm;aips14
+  - app {{ env.BOOT_DEVICE }} -xn lwip xip1 ocram2
+  - app {{ env.BOOT_DEVICE }} -xn usbwlan xip1 ocram2
+  # - app {{ env.BOOT_DEVICE }} write xip1 ocram2
+  - app {{ env.BOOT_DEVICE }} wificonf xip1 ocram2
+  - blob {{ env.BOOT_DEVICE }} /firmware/brcmfmac4373.bin xip1
+  - blob {{ env.BOOT_DEVICE }} /firmware/brcmfmac4373.clm_blob xip1
   - wait 2000
   - go!

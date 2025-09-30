@@ -14,6 +14,8 @@
 #ifndef _BOARD_CONFIG_H_
 #define _BOARD_CONFIG_H_
 
+#define USB_EHCI_OTG2_ENABLED 1
+
 
 /*
  * libpseudodev and libposixsrv shall be used exclusively, libpseudodev uses
