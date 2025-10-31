@@ -7,3 +7,4 @@ _boot/*
 compile_commands.json
 .cache/*
 .venv/
+.cpptest
