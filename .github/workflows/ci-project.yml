@@ -141,7 +141,6 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: phoenix-rtos-${{ matrix.target }}
-        path: _build
 
 #    - name: Unpack build artifacts
 #      run: |
@@ -184,7 +183,7 @@ jobs:
 
     - name: Get changed and added files
       id: changed_files
-      run: chmod +x scripts/ci/changed_files.sh
+      run: scripts/ci/changed_files.sh
 
     - name: Run cpptestcli
       run: scripts/ci/parasoft_cpptestcli.py --fix-compile-db ${{ github.event.repository.name }} ${{ steps.changed_files.outputs.files }}
